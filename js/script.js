@@ -1,25 +1,21 @@
 var app = new Vue({
     el: '#root',
     data: {                 
-      mailList: '',   
+      mailList: [],   
          
-    },
-    methods: {
-
-        
-    },
+    },    
     mounted() {
-        axios
+        for (let i = 0; i < 10; i++) {
+            axios
             .get('https://flynn.boolean.careers/exercises/api/random/mail')
             .then((response) => {
                 console.log(response)
                 const result = response.data;
                 console.log(result)
-                this.mailList = result.response   
-               
-                
-
+                this.mailList.push(result.response)           
                 
             });
+        }
+        
     }
   })
