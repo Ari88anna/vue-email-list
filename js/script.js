@@ -9,9 +9,9 @@ var app = new Vue({
             axios
             .get('https://flynn.boolean.careers/exercises/api/random/mail')
             .then((response) => {
-                console.log(response)
-                const result = response.data;
-                console.log(result)
+                
+                const result = response.data;    
+                            
                 this.mailList.push(result.response)           
                 
             });

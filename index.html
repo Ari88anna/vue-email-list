@@ -21,7 +21,7 @@
 
         <div class="mail-container">
 
-            <ul class="mail-list">
+            <ul v-if="mailList.length == 10" class="mail-list">
                 <!-- single mail -->
                 <li v-for="mail in mailList">
                     {{mail}}
